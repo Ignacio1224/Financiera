@@ -63,3 +63,4 @@ CREATE TABLE Transferencia (
     StatusTransfer VARCHAR (10)
 );
 GO
+
