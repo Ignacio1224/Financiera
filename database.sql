@@ -3,9 +3,11 @@
 CREATE DATABASE OBLBD2;
 GO
 
+USE OBLBD2;
+GO
 /* Creo las tablas */
 
-CREATE TABLE Scursal(
+CREATE TABLE Sucursal(
     IdSucursal CHARACTER (5) NOT NULL,
     DscSucursal VARCHAR (20),
     DirSucursal VARCHAR (25),
@@ -63,4 +65,3 @@ CREATE TABLE Transferencia (
     StatusTransfer VARCHAR (10)
 );
 GO
-
