@@ -279,6 +279,42 @@ VALUES
     (GETDATE(), 'T', '1', '146');
 EXECUTE ResetIdentityMovimiento;
 
+INSERT INTO Movimiento
+    (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
+VALUES
+    (GETDATE() -1 , 'S', '1', '1634');
+EXECUTE ResetIdentityMovimiento;
+
+INSERT INTO Movimiento
+    (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
+VALUES
+    (GETDATE() -2 , 'S', '1', '1246');
+EXECUTE ResetIdentityMovimiento;
+
+INSERT INTO Movimiento
+    (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
+VALUES
+    (GETDATE() -20 , 'E', '1', '1406');
+EXECUTE ResetIdentityMovimiento;
+
+INSERT INTO Movimiento
+    (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
+VALUES
+    (GETDATE() -1 , 'S', '2', '1634');
+EXECUTE ResetIdentityMovimiento;
+
+INSERT INTO Movimiento
+    (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
+VALUES
+    (GETDATE() -2 , 'S', '3', '1246');
+EXECUTE ResetIdentityMovimiento;
+
+INSERT INTO Movimiento
+    (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
+VALUES
+    (GETDATE() -20 , 'E', '2', '1406');
+EXECUTE ResetIdentityMovimiento;
+
 /* Se prueba limites de valores de datos en los campos y existencia de las FK, restricciones Check */
 
 

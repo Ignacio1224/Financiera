@@ -42,7 +42,8 @@ GO
     ALTER TABLE Cuenta ADD CONSTRAINT fk_IdSucursal_Cuenta FOREIGN KEY (IdSucursal) REFERENCES Sucursal (IdSucursal);
 -- FOREIGN KEY IdCliente TO Cliente
     ALTER TABLE Cuenta ADD CONSTRAINT fk_IdCliente_Cuenta FOREIGN KEY (IdCliente) REFERENCES Cliente (IdCliente);
-
+-- FOREIGN KEY IdMoneda TO Moneda
+    ALTER TABLE Cuenta ADD CONSTRAINT fk_IdMoneda_Cuenta FOREIGN KEY (IdMoneda) REFERENCES Moneda (IdMoneda);
 
 /* Tabla Movimiento */
 -- PRYMARY KEY IdMovim
