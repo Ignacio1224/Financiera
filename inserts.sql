@@ -107,61 +107,71 @@ INSERT INTO Cliente
     (IdCliente, NombreCliente, TipoCliente, TelCliente, MailCliente)
 VALUES
     ('1', 'Martin SA', 'E', '456465465', 'asc@as');
-EXECUTE ResetIdentityCliente;
 
 INSERT INTO Cliente
     (NombreCliente, TipoCliente, TelCliente, MailCliente)
 VALUES
     ('Martin SA', 'Comun', '456465465', 'asc@as');
-EXECUTE ResetIdentityCliente;
 
 INSERT INTO Cliente
     (NombreCliente, TipoCliente, TelCliente, MailCliente)
 VALUES
     ('Martin SA', 'E', '454545454456465465454545454456465465', 'asc@as');
-EXECUTE ResetIdentityCliente;
 
 INSERT INTO Cliente
     (NombreCliente, TipoCliente, TelCliente, MailCliente)
 VALUES
     ('Martin SA', 'E', '454545454456465', 'asdasdasdasdasdasdadfgtdggbasc@as');
-EXECUTE ResetIdentityCliente;
 
 INSERT INTO Cliente
     (NombreCliente, TipoCliente, TelCliente, MailCliente)
 VALUES
     ('Martin SA', 'F', '454545454456465', 'sdadfgtdggbasc@as');
-EXECUTE ResetIdentityCliente;
 
 INSERT INTO Cliente
     (NombreCliente, TipoCliente, TelCliente, MailCliente)
 VALUES
     ('Martin SA', 'E', '454545454456465', 'sdadfgtdggbasc@as');
-EXECUTE ResetIdentityCliente;
 
 INSERT INTO Cliente
     (NombreCliente, TipoCliente, TelCliente, MailCliente)
 VALUES
     ('Pepe', 'P', '4545465', 'sdadfgtdggbasc@as');
-EXECUTE ResetIdentityCliente;
 
 INSERT INTO Cliente
     (NombreCliente, TipoCliente, TelCliente, MailCliente)
 VALUES
     ('Pepe', 'P', '4563518', 'sdcs@adsfs');
-EXECUTE ResetIdentityCliente;
 
 INSERT INTO Cliente
     (NombreCliente, TipoCliente, TelCliente, MailCliente)
 VALUES
     ('Pepegriyo', 'P', '74165', 'sd45cs@adsdfs');
-EXECUTE ResetIdentityCliente;
 
 INSERT INTO Cliente
     (NombreCliente, TipoCliente, TelCliente, MailCliente)
 VALUES
     ('Pepegriyo', 'P', '74165', NULL);
-EXECUTE ResetIdentityCliente;
+
+INSERT INTO Cliente
+    (NombreCliente, TipoCliente, TelCliente, MailCliente)
+VALUES
+    ('Ignacio', 'P', '092041', 'icabrera@psico.edu.uy');
+
+INSERT INTO Cliente
+    (NombreCliente, TipoCliente, TelCliente, MailCliente)
+VALUES
+    ('Salida', 'P', '092041', 'salida@salida.com');
+
+INSERT INTO Cliente
+    (NombreCliente, TipoCliente, TelCliente, MailCliente)
+VALUES
+    ('Transferencia', 'E', '1236548965', 'transfer@salida.com');
+
+INSERT INTO Cliente
+    (NombreCliente, TipoCliente, TelCliente, MailCliente)
+VALUES
+    ('SALIDA ENTRADA != anio', 'E', '1236548965', 'salida@entrada.com');
 
 /* Se prueba integridad de PK, limites de valores de datos en los campos y campos unique */
 
@@ -171,56 +181,61 @@ INSERT INTO Cuenta
     (IdCuenta, IdTipo, IdMoneda, IdSucursal, IdCliente)
 VALUES
     ('5641531', '1', '2', '4', '1');
-EXECUTE ResetIdentityCuenta;
 
 INSERT INTO Cuenta
     (IdTipo, IdMoneda, IdSucursal, IdCliente)
 VALUES
     ('1', '46516334', '4', '2');
-EXECUTE ResetIdentityCuenta;
 
 INSERT INTO Cuenta
     (IdTipo, IdMoneda, IdSucursal, IdCliente)
 VALUES
     ('1', '2', '132', '2');
-EXECUTE ResetIdentityCuenta;
 
 INSERT INTO Cuenta
     (IdTipo, IdMoneda, IdSucursal, IdCliente)
 VALUES
     ('1', '2', '4', '2');
-EXECUTE ResetIdentityCuenta;
 
 INSERT INTO Cuenta
     (IdTipo, IdMoneda, IdSucursal, IdCliente)
 VALUES
     ('1', '132', '4', '3');
-EXECUTE ResetIdentityCuenta;
 
 INSERT INTO Cuenta
     (IdTipo, IdMoneda, IdSucursal, IdCliente)
 VALUES
     ('2', '12', '2', '4');
-EXECUTE ResetIdentityCuenta;
 
 INSERT INTO Cuenta
     (IdTipo, IdMoneda, IdSucursal, IdCliente)
 VALUES
     ('3', '124', '3', '4');
-EXECUTE ResetIdentityCuenta;
 
 INSERT INTO Cuenta
     (IdTipo, IdMoneda, IdSucursal, IdCliente)
 VALUES
     ('2', '24', '2', '2');
-EXECUTE ResetIdentityCuenta;
 
 INSERT INTO Cuenta
     (IdTipo, IdMoneda, IdSucursal, IdCliente)
 VALUES
     ('2', '18', '2', '2');
-EXECUTE ResetIdentityCuenta;
 
+INSERT INTO Cuenta
+    (IdTipo, IdMoneda, IdSucursal, IdCliente)
+VALUES
+    ('2', '18', '2', '6');
+
+INSERT INTO Cuenta
+    (IdTipo, IdMoneda, IdSucursal, IdCliente)
+VALUES
+    ('2', '18', '2', '7');
+
+INSERT INTO Cuenta
+    (IdTipo, IdMoneda, IdSucursal, IdCliente)
+VALUES
+    ('2', '24', '4', '8');
 /* Se prueba limites de valores de datos en los campos y existencia de las FK */
 
 
@@ -229,92 +244,101 @@ INSERT INTO Movimiento
     (IdMovim, FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     ('1', GETDATE(), '2', '1', '456');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     ('2019-14-11', 'E', '1', '456');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     ('2019-04-33', 'E', '1', '456');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     (GETDATE(), 'E', '189465', '456352');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     (GETDATE(), '264513', '1', '456352');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     (GETDATE(), 'F', '1', '456352');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     (GETDATE(), 'E', '2', '120000');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     (GETDATE(), 'S', '1', '1204');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     (GETDATE(), 'T', '1', '146');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     (GETDATE() -1 , 'S', '1', '1634');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     (GETDATE() -2 , 'S', '1', '1246');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     (GETDATE() -20 , 'E', '1', '1406');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     (GETDATE() -1 , 'S', '2', '1634');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     (GETDATE() -2 , 'S', '3', '1246');
-EXECUTE ResetIdentityMovimiento;
 
 INSERT INTO Movimiento
     (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
 VALUES
     (GETDATE() -20 , 'E', '2', '1406');
-EXECUTE ResetIdentityMovimiento;
 
+INSERT INTO Movimiento
+    (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
+VALUES
+    (GETDATE(), 'S', '7', '122418');
+
+INSERT INTO Movimiento
+    (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
+VALUES
+    (GETDATE(), 'T', '8', '122418');
+
+INSERT INTO Movimiento
+    (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
+VALUES
+    (GETDATE() - 12, 'E', '9', '125418');
+
+INSERT INTO Movimiento
+    (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
+VALUES
+    (GETDATE(), 'S', '9', '4865');
+
+INSERT INTO Movimiento
+    (FchMovim, TipoMovim, IdCuenta, ImporteMovim)
+VALUES
+    (GETDATE(), 'E', '9', '125418');
 /* Se prueba limites de valores de datos en los campos y existencia de las FK, restricciones Check */
 
 
@@ -323,42 +347,36 @@ INSERT INTO Transferencia
     (IdTransfer, FchTransfer, IdMovim, TipoTransfer, CtaDestino, BancoDestino, StatusTransfer)
 VALUES
     (14654654654, GETDATE(), '1', 'I', '2', NULL, 'Confirmado');
-EXECUTE ResetIdentityTransferencia;
 
 INSERT INTO Transferencia
     (FchTransfer, IdMovim, TipoTransfer, CtaDestino, BancoDestino, StatusTransfer)
 VALUES
     ('GETDATEas()', '1', 'I', '2', NULL, 'Confirmado');
-EXECUTE ResetIdentityTransferencia;
-
-INSERT INTO Transferencia
-    (FchTransfer, IdMovim, TipoTransfer, CtaDestino, BancoDestino, StatusTransfer)
-VALUES
-    (GETDATE(), '456', 'I', '2', NULL, 'Confirmado');
-EXECUTE ResetIdentityTransferencia;
 
 INSERT INTO Transferencia
     (FchTransfer, IdMovim, TipoTransfer, CtaDestino, BancoDestino, StatusTransfer)
 VALUES
     (GETDATE(), '3', 'E', '48', 'Santn', 'No se save');
-EXECUTE ResetIdentityTransferencia;
 
 INSERT INTO Transferencia
     (FchTransfer, IdMovim, TipoTransfer, CtaDestino, BancoDestino, StatusTransfer)
 VALUES
     (GETDATE(), '3', 'E', '48', 'Santn', 'Pendiente');
-EXECUTE ResetIdentityTransferencia;
 
 INSERT INTO Transferencia
     (FchTransfer, IdMovim, TipoTransfer, CtaDestino, BancoDestino, StatusTransfer)
 VALUES
     (GETDATE(), '3', 'I', '2', NULL, 'Confirmado');
-EXECUTE ResetIdentityTransferencia;
 
 INSERT INTO Transferencia
     (FchTransfer, IdMovim, TipoTransfer, CtaDestino, BancoDestino, StatusTransfer)
 VALUES
     (GETDATE(), 3, 'E', 2, NULL, 'Confirmado');
-EXECUTE ResetIdentityTransferencia;
+
+INSERT INTO Transferencia
+    (FchTransfer, IdMovim, TipoTransfer, CtaDestino, BancoDestino, StatusTransfer)
+VALUES
+    (GETDATE(), 14, 'I', 2, NULL, 'Pendiente');
 
 /* Se prueba existencia de las FK, restricciones Check y PK */
+

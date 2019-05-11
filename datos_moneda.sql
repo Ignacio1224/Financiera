@@ -1,5 +1,11 @@
+/*
+* Fuente: https://gist.github.com/voskobovich/43f851859c23a8261514
+* Fue adaptada para poder insertar sus datos en la tabla correspondiente.
+*/
+
 USE OBLBD2;
 GO
+
 INSERT INTO Moneda (IdMoneda, DscMoneda, SimboloMoneda) VALUES ('1', 'Leke', 'Lek');
 INSERT INTO Moneda (IdMoneda, DscMoneda, SimboloMoneda) VALUES ('2', 'Dollars', '$');
 INSERT INTO Moneda (IdMoneda, DscMoneda, SimboloMoneda) VALUES ('3', 'Afghanis', '؋');

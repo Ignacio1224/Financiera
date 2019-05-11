@@ -3,7 +3,9 @@
 USE OBLBD2;
 GO
 
-CREATE PROCEDURE ResetIdentityCliente
+CREATE TRIGGER ResetIdentityCliente
+    ON Cliente
+    AFTER INSERT, DELETE, UPDATE
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -14,7 +16,10 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE ResetIdentityCuenta
+CREATE TRIGGER ResetIdentityCuenta
+    ON Cuenta
+    AFTER INSERT, DELETE, UPDATE
+
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -25,7 +30,9 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE ResetIdentityMovimiento
+CREATE TRIGGER ResetIdentityMovimiento
+    ON Movimiento
+    AFTER INSERT, DELETE, UPDATE
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -36,7 +43,10 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE ResetIdentityTransferencia
+
+CREATE TRIGGER ResetIdentityTransferencia
+    ON Transferencia
+    AFTER INSERT, DELETE, UPDATE
 AS
 BEGIN
     SET NOCOUNT ON;

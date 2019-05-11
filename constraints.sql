@@ -63,3 +63,4 @@ GO
     ALTER TABLE Transferencia ADD CONSTRAINT check_StatusTransfer_Transferencia CHECK (StatusTransfer IN ('Confirmado', 'Pendiente', 'Rechazada'));
 -- RNE: Si son del tipo 'Internas' se debe validad que el valor del campo 'CtaDestino' exista en la tabla Cuenta.
 -- RNE: Si son del tipo 'Externas' se debe validar que el valor del campo 'BancoDestino' no sea nulo.
+-- RNE: Si son del tipo 'Internas' se debe validad que el valor del campo 'CtaDestino' sea distinto al valor del campo 'IdCuenta' en la tabla Movimiento
