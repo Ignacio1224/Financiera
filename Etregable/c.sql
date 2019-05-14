@@ -84,6 +84,7 @@ WHERE YEAR (M.FchMovim) = YEAR (GETDATE());
 
 
 -- E: Mostrar los datos de las monedas que tuvieron más movimientos en el Banco en el último año.
+/* NOTA: Se asume que el último año es el año actual */
 SELECT Cu.*
 FROM Moneda Cu INNER JOIN (
     SELECT C .IdMoneda
@@ -94,10 +95,11 @@ FROM Moneda Cu INNER JOIN (
         HAVING 
             COUNT (M.IdMovim) = (
                 SELECT MAX(T.cantidad_movimientos) AS 'maxima_cantidad'
-        FROM (
+                FROM (
                     SELECT COUNT(*) AS 'cantidad_movimientos'
-            FROM Movimiento
-            GROUP BY IdCuenta) T
+                    FROM Movimiento
+                    GROUP BY IdCuenta) T
                 )
     ) MC ON C.IdCuenta = MC.IdCuenta
 ) CMC ON Cu.IdMoneda = CMC.IdMoneda;
+
