@@ -3,6 +3,17 @@
 USE OBLBD2;
 GO
 
+/*
+
+    ACLARACIONES IMPORTANTES
+        
+        - Se asume que las cotizaciones de las monedas son iguales, al no tener una tabla cotizaciones.
+        
+        - Se asume que el último año es el año actual.
+        
+        - En la tabla Movimiento se encuentran todas las transacciones aprobadas, por lo tanto, las operaciones relacionadas con el saldo de los clientes son calculadas en base a esta. (Siempre está actualizada)
+
+*/
 
 -- A: Mostrar los clientes que han realizado algún movimiento de salida este año, pero que nunca han realizado movimientos de entrada este año.
 SELECT Cl.* FROM Cliente Cl INNER JOIN (
@@ -21,7 +32,6 @@ SELECT Cl.* FROM Cliente Cl INNER JOIN (
 
 
 -- B: Proporcionar un listado de los 10 clientes con más saldo a favor del banco, mostrarlo ordenado por importe descendente.
-/* NOTA: Se asume que las cotizaciones de las monedas son iguales, al no tener una tabla cotizaciones */
 /* Selecciono los clientes */
 SELECT C.IdCliente
 FROM Cuenta C INNER JOIN (
@@ -64,8 +74,6 @@ LEFT JOIN (
 
 
 -- D: Devolver el importe total de depósitos del año, el importe total de retiros del año y el promedio de importes movidos también en el año.
-/* NOTA: Se asume que las cotizaciones de las monedas son iguales, al no tener una tabla cotizaciones */
-
 SELECT DISTINCT
     (SELECT SUM (Md.ImporteMovim) FROM Movimiento Md WHERE Md.TipoMovim = 'E') AS 'Depositos',
     (SELECT SUM (Mr.ImporteMovim) FROM Movimiento Mr WHERE Mr.TipoMovim <> 'S') AS 'Retiros',
@@ -75,7 +83,6 @@ WHERE YEAR (M.FchMovim) = YEAR (GETDATE());
 
 
 -- E: Mostrar los datos de las monedas que tuvieron más movimientos en el Banco en el último año.
-/* NOTA: Se asume que el último año es el año actual */
 SELECT Cu.*
 FROM Moneda Cu INNER JOIN (
     SELECT C .IdMoneda
